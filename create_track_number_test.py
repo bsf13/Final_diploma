@@ -6,11 +6,9 @@ import data
 def test_create_order_by_track():
     response_3 = sender_stand_request.post_new_order(data.order_body)
     track = {"t": response_3.json()["track"]}
-    print("Создан заказ, номер трека заказа:", track)
-
+   
 # Получение сведений о заказе по номеру трека
     response_4 = sender_stand_request.get_new_order(track)
     assert response_4.status_code == 200
     order_info = response_4.json()
-    print("Сведения о заказе:", order_info)
-
+ 
